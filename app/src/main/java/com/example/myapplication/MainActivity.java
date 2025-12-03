@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import android.app.AlertDialog;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -36,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         ArrayAdapter<CharSequence> adapter = new ArrayAdapter<>(this, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item,stanowisko);
         spinner.setAdapter(adapter);
         Button generate = findViewById(R.id.generuj);
+
 
         generate.setOnClickListener(new View.OnClickListener() {
 
@@ -82,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 if (yfry){
                     sb.replace(0,0, String.valueOf(Numbers.charAt(random.nextInt(Numbers.length()))));
-                    Toast.makeText(MainActivity.this, sb, Toast.LENGTH_SHORT).show();
+
                     sb.delete(sb.length()-1,sb.length()-1);
 
 
@@ -90,13 +92,22 @@ public class MainActivity extends AppCompatActivity {
                 }
                 if (naki){
                     sb.replace(0,0, String.valueOf(Specjal.charAt(random.nextInt(Specjal.length()))));
-                    Toast.makeText(MainActivity.this, sb, Toast.LENGTH_SHORT).show();
+
                 }
+                new AlertDialog.Builder(MainActivity.this)
+
+                        .setTitle("Wygenerowane hasło")
+                        .setMessage(sb.toString())
+                        .show();
+
+
 
 
 
             }
+            Button
         });
+
 
     }
 }
