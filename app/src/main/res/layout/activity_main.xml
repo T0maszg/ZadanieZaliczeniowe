@@ -6,33 +6,83 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="20dp">
 
-   <EditText
+   <TextView
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
-       android:hint="Imie: "
-       android:id="@+id/name"/>
+       android:text="Dane pracownika"
+       />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="E-mail: "
-        android:id="@+id/mail"/>
+        android:hint="Imie"
+        android:id="@+id/imie"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Hasło: "
-        android:id="@+id/password"/>
+        android:hint="Nazwisko"
+        android:id="@+id/nazwisko"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Stanowisko"
+            />
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinner">
+        </Spinner>
+    </LinearLayout>
+
+
+
+
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Generowanie hasła "/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Powtórz hasło: "
-        android:id="@+id/passwordagain"/>
+        android:hint="Ile znaków"
+        android:id="@+id/znaki"/>
+    <CheckBox
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Małe i wielkie litery"
+        android:checked="true"
+        android:id="@+id/litery"/>
+    <CheckBox
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cyfry"
+        android:id="@+id/cyfry"/>
+    <CheckBox
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Znaki specjalne"/>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Zarejestrój"
-        android:id="@+id/button"/>
+        android:text="Generuj hasło"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Zatwierdź"/>
+
+
+
+
 
 
 </LinearLayout>
