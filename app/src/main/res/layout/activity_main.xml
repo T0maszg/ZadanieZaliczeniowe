@@ -70,15 +70,18 @@
     <CheckBox
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Znaki specjalne"/>
+        android:text="Znaki specjalne"
+        android:id="@+id/znakis"/>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Generuj hasło"/>
+        android:text="Generuj hasło"
+        android:id="@+id/generuj"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Zatwierdź"/>
+        android:text="Zatwierdź"
+        android:id="@+id/zatwierdz"/>
 
 
 
