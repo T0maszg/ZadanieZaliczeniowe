@@ -21,7 +21,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class MainActivity extends AppCompatActivity {
-
+    private String fullhouse;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
                 StringBuilder sb=new StringBuilder(length);
                 final String ALLOWED_CHARACTERS ="qwertyuiopasdfghjklzxcvbnm";
                 final String Numbers ="1234567890";
-                final String Specjal ="$%@!+=";
+                final String Specjal ="!@#$%^&*()_+-=";
                 for(int i=0;i<length;++i)
                     sb.append(ALLOWED_CHARACTERS.charAt(random.nextInt(ALLOWED_CHARACTERS.length())));
                 haslo=sb.toString();
@@ -91,9 +91,11 @@ public class MainActivity extends AppCompatActivity {
 
                 }
                 if (naki){
-                    sb.replace(0,0, String.valueOf(Specjal.charAt(random.nextInt(Specjal.length()))));
+                    sb.replace(1,1, String.valueOf(Specjal.charAt(random.nextInt(Specjal.length()))));
 
                 }
+                fullhouse=sb.toString();
+
                 new AlertDialog.Builder(MainActivity.this)
 
                         .setTitle("Wygenerowane hasło")
@@ -105,7 +107,34 @@ public class MainActivity extends AppCompatActivity {
 
 
             }
-            Button
+
+
+        });
+        Button zatwierdz = findViewById(R.id.zatwierdz);
+        zatwierdz.setOnClickListener(new View.OnClickListener()  {
+
+
+
+            @Override
+            public void onClick(View v) {
+                String imie=(((EditText)findViewById(R.id.imie)).getText().toString());
+                String nazwisko=(((EditText)findViewById(R.id.nazwisko)).getText().toString());
+                String stan=stanowisko[Math.toIntExact(spinner.getSelectedItemId())];
+                new AlertDialog.Builder(MainActivity.this)
+
+                        .setTitle("Dane pracownika")
+                        .setMessage("Imie: "+imie +"\n"+"Nazwisko: "+nazwisko+"\n"+"Stanowisko: "+stan+"\n"+"hasło: "+fullhouse)
+
+                        .show();
+
+
+
+
+
+            }
+
+
+
         });
 
 
